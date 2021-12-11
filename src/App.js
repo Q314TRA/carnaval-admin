@@ -11,17 +11,17 @@ function App() {
   const [users, setUsers] = useState([]);
   const [usersCount, setUsersCount] = useState(0);
   let findByPhone = () => {
-    axios.get(`http://localhost:3000/carnaval?phone=${phone}`)
+    axios.get(`https://mutualcannabica.com/carnaval?phone=${phone}`)
       .then(item => setUsers(item.data))
   }
 
   let updateCheck = (id) => {
-    axios.put(`http://localhost:3000/carnaval`, { id })
+    axios.put(`https://mutualcannabica.com/carnaval`, { id })
       .then(findByPhone)
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/carnavalcoutn`)
+    axios.get(`https://mutualcannabica.com/carnavalcoutn`)
       .then(item => setUsersCount(item.data))
   }, [])
 
